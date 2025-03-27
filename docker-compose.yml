@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DO_API_TOKEN=${DO_API_TOKEN}
+    restart: unless-stopped
+    # If you need Redis, uncomment:
+    # depends_on:
+    #   - redis
+  
+  # Redis service (optional - only uncomment if needed)
+  # redis:
+  #   image: redis:alpine
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+  #   restart: unless-stopped
+
+# volumes:
+#   redis-data:
