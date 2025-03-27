@@ -37,8 +37,11 @@ npm install
 
 Copy the `.env.example` to `.env` and fill in the required values:
 <pre>
-DO_API_TOKEN=your_digitalocean_api_token PORT=3000 ADMIN_KEY=your_admin_dashboard_access_key SSH_KEY_IDS=comma_separated_list_of_ssh_key_ids
-<pre>
+DO_API_TOKEN=your_digitalocean_api_token 
+PORT=3000 
+ADMIN_KEY=your_admin_dashboard_access_key 
+SSH_KEY_IDS=comma_separated_list_of_ssh_key_ids
+</pre>
 
 4. Configure your applications:
 
@@ -72,8 +75,8 @@ docker-compose up -d
 ```
 
 ## Usage
-Starting Applications  
-Access available applications at: http://<your-server-ip>:<port>/app/<app-name>  
+### Starting Applications  
+Access available applications at: http://your-server-ip:port/app/app-name  
 Example: http://146.190.18.49:3000/app/app1  
 Each user (identified by IP address) can only have one active application at a time.  
 
@@ -83,7 +86,7 @@ Each user (identified by IP address) can only have one active application at a t
 - If you try to start a different application while one is already running, you'll be asked to confirm the switch  
 
 ### Admin Dashboard
-Access the admin dashboard at: http://<your-server-ip>:<port>/admin?key=<your-admin-key>  
+Access the admin dashboard at: http://your-server-ip:port/admin?key=your-admin-key  
 
 The dashboard allows you to:  
 
